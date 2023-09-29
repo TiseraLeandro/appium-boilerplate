@@ -8,7 +8,7 @@ const sleep = async (milliseconds) => {
 
 describe('Signing from the welcome page', () => {
     it('should be able to sign in into the app', async () => {
-        await WelcomePage.signIn('ltisera@slingr.io','New234Pas$');
+        await WelcomePage.signIn('user','pass');
         await sleep (15000);
    });
 });
