@@ -3,6 +3,9 @@
  * If you want to know which configuration options you have then you can
  * check https://webdriver.io/docs/configurationfile
  */
+
+const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -90,7 +93,7 @@ export const config: WebdriverIO.Config = {
     // - wdio.shared.local.appium.conf.ts
     // - wdio.shared.sauce.conf.ts
     // configuration files
-    services: [],
+    services: [[TimelineService]],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -110,7 +113,7 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ["spec"],
+    reporters: [['timeline', { outputDir: './timeline_report' }]],
     // Options to be passed to Mocha.
     mochaOpts: {
         ui: "bdd",
