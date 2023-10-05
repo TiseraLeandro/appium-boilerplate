@@ -31,6 +31,7 @@ config.capabilities = [
         // @ts-ignore
         'appium:appWaitActivity': '.MainActivity',
         'appium:newCommandTimeout': 240,
+        'appium:avd': 'Pixel_XL_API_33'
     },
 ];
 

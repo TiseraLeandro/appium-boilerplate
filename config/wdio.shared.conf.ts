@@ -5,6 +5,8 @@
  */
 
 const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
+const { exec } = require('child_process');
+
 
 
 export const config: WebdriverIO.Config = {
@@ -136,4 +138,13 @@ export const config: WebdriverIO.Config = {
     /**
      * NOTE: No Hooks are used in this project, but feel free to add them if you need them.
      */
+    onWorkerEnd: function (result, capabilities, specs) {
+        exec('adb emu kill', (error, stdout, stderr) => {
+            if (error) {
+              console.error(`Error executing adb emu kill: ${error}`);
+            } else {
+              console.log(`adb emu kill output:\n${stdout}`);
+            }
+          });
+    },
 };
