@@ -29,7 +29,7 @@ config.capabilities = [
         //'appium:app': join(process.cwd(), './app/BCuz-release.apk'),
         'appium:app': join(process.cwd(), './app/HQ-Mobile.apk'),
         // @ts-ignore
-        //'appium:appWaitActivity': 'com.HQ-Mobile.MainActivity',
+        'appium:appWaitActivity': '.MainActivity',
         'appium:newCommandTimeout': 240,
     },
 ];

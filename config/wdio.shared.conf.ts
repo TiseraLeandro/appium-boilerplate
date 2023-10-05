@@ -6,6 +6,7 @@
 
 const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
 
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
